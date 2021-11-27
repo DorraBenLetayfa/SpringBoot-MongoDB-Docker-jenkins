@@ -1,0 +1,4 @@
+com\smarttek\crudspringmongodbdocker\controller\UserController.class
+com\smarttek\crudspringmongodbdocker\repository\UserRepository.class
+com\smarttek\crudspringmongodbdocker\CrudspringmongodbdockerApplication.class
+com\smarttek\crudspringmongodbdocker\model\User.class
