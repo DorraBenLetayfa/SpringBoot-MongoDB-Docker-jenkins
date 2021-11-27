@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    environment {
+        tool name: 'MAVEN_HOME', type: 'maven'
+    }
 
     stages {
         stage('Clone') {
@@ -11,7 +14,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'start Building...'
-                bat 'mvn clean install'
+                sh 'mvn clean install'
             }
         }
         stage('Deploy') {
