@@ -28,7 +28,14 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 echo 'start building image...'
-                bat 'docker build -t user:latest .'
+                bat 'docker build -t dorrabenletayfa/springboot_user_crud_image .'
+            }
+        }
+        stage('Push Docker Image') {
+            steps {
+                echo 'start pushing image...'
+                bat 'docker login'
+                bat 'docker push dorrabenletayfa/springboot_user_crud_image:tagname'
             }
         }
     }
