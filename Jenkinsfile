@@ -35,7 +35,7 @@ pipeline {
             steps {
                 echo 'start pushing image...'
                 bat 'docker login'
-                bat 'docker push dorrabenletayfa/springboot_user_crud_image:tagname'
+                bat 'docker push dorrabenletayfa/springboot_user_crud_image:latest'
             }
         }
     }
