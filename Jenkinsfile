@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     // tool name: 'MAVEN_HOME', type: 'maven'
-    tools {
-        maven 'MAVEN_HOME'
-    }
+    // tools {
+    //     maven 'MAVEN_HOME'
+    // }
 
     stages {
         stage('Clone') {
@@ -16,7 +16,10 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'start Building...'
-                sh 'mvn clean install'
+                // sh 'mvn clean install'
+                withMaven(maven : 'apache-maven-3.8.3') {
+                    bat 'mvn clean compile'
+                }
             }
         }
         stage('Deploy') {
