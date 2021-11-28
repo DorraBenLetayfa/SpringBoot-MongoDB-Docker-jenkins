@@ -27,7 +27,8 @@ pipeline {
         }
         stage('Build Docker Image') {
             steps {
-                echo 'Deploying...'
+                echo 'start building image...'
+                dockerImage = docker.build user
             }
         }
     }
