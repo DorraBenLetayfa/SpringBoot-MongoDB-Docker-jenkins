@@ -3,7 +3,7 @@ pipeline {
 
     // tool name: 'MAVEN_HOME', type: 'maven'
     tools {
-        maven 'maven'
+        maven 'MAVEN_HOME'
     }
 
     stages {
