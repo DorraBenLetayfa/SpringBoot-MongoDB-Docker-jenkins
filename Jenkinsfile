@@ -15,19 +15,17 @@ pipeline {
                 git 'https://github.com/DorraBenLetayfa/springBoot-mongoDB-docker-jenkins.git'
             }
         }
-        stage('Build') {
+        stage('Build Project with Maven') {
             steps {
                 echo 'start Building...'
                 // Run Maven on a Unix agent.
-                bat "mvn -Dmaven.test.failure.ignore=true clean install"
+                bat 'mvn clean install'
 
-            // To run Maven on a Windows agent, use
-            // bat "mvn -Dmaven.test.failure.ignore=true clean package"
-            // sh "mvn clean install"
-                
+            // To run Maven on a Linux agent, use
+            // sh "mvn -Dmaven.test.failure.ignore=true clean package"
             }
         }
-        stage('Deploy') {
+        stage('Build Docker Image') {
             steps {
                 echo 'Deploying...'
             }
