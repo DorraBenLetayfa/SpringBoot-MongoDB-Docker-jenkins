@@ -1,7 +1,10 @@
 pipeline {
     agent any
 
-    tool name: 'MAVEN_HOME', type: 'maven'
+    // tool name: 'MAVEN_HOME', type: 'maven'
+    tools {
+        maven 'MAVEN_HOME'
+    }
 
     stages {
         stage('Clone') {
