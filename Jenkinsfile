@@ -28,7 +28,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 echo 'start building image...'
-                bat 'docker build -t user:latest'
+                bat 'docker build -t user:latest .'
             }
         }
     }
