@@ -28,7 +28,9 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 echo 'start building image...'
-                dockerImage = docker.build user
+                script {
+                    dockerImage = docker.build user
+                }
             }
         }
     }
